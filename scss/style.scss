@@ -620,6 +620,19 @@ form {
         display: block;
     }
 
+    .nav__btn {
+        text-decoration: none;
+        color: inherit;
+        font-weight: 500;
+        border-top: $border-btn-nav $color-btn-violet;
+        border-right: $border-btn-nav $color-btn-violet;
+        border-bottom: $border-btn-nav $color-btn-yellow;
+        border-left: $border-btn-nav $color-btn-yellow;
+        border-radius: 40px;
+        padding: 5px 10px;
+        text-align: $align;
+    }
+
     .title {
         font-size: 35px;
     }
