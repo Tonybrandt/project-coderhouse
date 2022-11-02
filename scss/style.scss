@@ -1,21 +1,21 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&display=swap');
 @import "colors";
+@import "reset";
+@import "mixins";
 
+$border-btn-nav: 6px solid;
+$border: 10px solid;
+$align: center;
+$max-width: 1300px;
 
+$breakpoint-tablet: 768px;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// $breakpoints: (
+//   phone: 640px,
+//   tablet: 768px,
+//   desktop: 1024px,
+// ) !default;
 
-body {
-    font-family: 'Raleway', sans-serif;
-}
-
-.main {
-    background-color: #e0e0e0;
-}
 
 .span {
     display: none;
@@ -23,7 +23,7 @@ body {
 
 .header {
     width: 100%;
-    max-width: 1300px;
+    max-width: $max-width;
     height: calc(100vh - 20px);
     background: linear-gradient(to right, #5614b0, #dbd65c);
     margin: 0 auto;
@@ -33,9 +33,7 @@ body {
         width: 90%;
         margin: 0 auto;
         .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include flex-box (space-between);
             height: 60px;
             color: $color-white;
             .nav__link {
@@ -50,9 +48,8 @@ body {
                 }
             }
             .nav__links {
-                display: flex;
+                @include flex-box (center);
                 list-style-type: none;
-                justify-content: center;
                 .link {
                     text-decoration: none;
                     color: inherit;
@@ -70,13 +67,13 @@ body {
                 text-decoration: none;
                 color: inherit;
                 font-weight: 500;
-                border-top: 6px solid $color-btn-violet;
-                border-right: 6px solid $color-btn-violet;
-                border-bottom: 6px solid $color-btn-yellow;
-                border-left: 6px solid $color-btn-yellow;
+                border-top: $border-btn-nav $color-btn-violet;
+                border-right: $border-btn-nav $color-btn-violet;
+                border-bottom: $border-btn-nav $color-btn-yellow;
+                border-left: $border-btn-nav $color-btn-yellow;
                 border-radius: 40px;
                 padding: 5px 10px;
-                text-align: center;
+                text-align: $align;
             }
         }
         @media screen and (max-width: 850px) {
@@ -93,19 +90,8 @@ body {
 }
 
 .nav__btn {
-    text-decoration: none;
-    color: inherit;
-    font-weight: 500;
-    border-top: 6px solid $color-btn-violet;
-    border-right: 6px solid $color-btn-violet;
-    border-bottom: 6px solid $color-btn-yellow;
-    border-left: 6px solid $color-btn-yellow;
-    border-radius: 40px;
-    padding: 5px 10px;
-    text-align: center;
+    @extend .nav__btn;
 }
-
-
 
 /* bootstrap */
 
@@ -128,11 +114,9 @@ body {
 
 .header__content {
     height: calc(100vh - 70px);
-    display: flex;
+    @include flex-box (space-evenly);
     position: relative;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     .title-container {
         z-index: 10;
     }
@@ -140,7 +124,7 @@ body {
         font-size: 80px;
         color: $color-white;
         font-weight: 800;
-        text-align: center;
+        text-align: $align;
     }
     @media screen and (max-width: 400px) {
         .title {
@@ -148,29 +132,24 @@ body {
         }
     }
     .text-container {
-        /* width: 350px; */
         z-index: 10;
         color: $color-white;
         padding-bottom: 50px;
         .copy {
-            text-align: center;
             color: $color-white;
-            text-align: center;
+            text-align: $align;
             margin-top: 25px;
             z-index: 10;
         }
     }
     .header__svg {
         position: absolute;
-        left: -90px;
-        height: 550px;
+        left: -50px;
+        top: 80px;
+        height: 500px;
         z-index: 1;
     }
-    @media screen and (max-width: 850px) {
-        .header__svg {
-            display: none;
-        }
-    }
+
     .header__btn {
         z-index: 100;
         text-decoration: none;
@@ -179,50 +158,48 @@ body {
         background-color: rgba(255, 255, 255, 0.427);
         padding: 20px 60px;
         border-radius: 40px;
-        text-align: center;
+        text-align: $align;
         font-weight: 500;
-        border-bottom: 10px solid $color-btn-violet;
-        border-right: 10px solid $color-btn-violet;
-        border-top: 10px solid $color-btn-yellow;
-        border-left: 10px solid $color-btn-yellow;
+        border-bottom: $border $color-btn-violet;
+        border-right: $border $color-btn-violet;
+        border-top: $border $color-btn-yellow;
+        border-left: $border $color-btn-yellow;
     }
 }
 
+.header__svg {
+    @extend .header__svg
+}
+
 .copy {
-    text-align: center;
     color: $color-white;
-    /* width: 60%; */
-    text-align: center;
+    text-align: $align;
     margin-top: 25px;
     z-index: 10;
 }
-
 
 /* Section Cards */
 
 .cards {
     background-color: $color-white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 70px 0;
+    @include flex-box (space-around);
+    padding: 70px 15px;
     flex-flow: row wrap;
     width: 100%;
-    max-width: 1300px;
+    max-width: $max-width;
     margin: 0 auto;
     .card {
         max-height: 550px;
-        width: 350px;
-        min-width: 330px;
+        max-width: 300px;
+        min-width: 280px;
         min-height: 340px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-box (center);
         flex-direction: column;
         border-radius: 40px;
         overflow: hidden;
         padding: 10px;
-        margin: 15px 0;
+        margin: 15px 10px;
+        gap: 15px;
     }
     .card1 {
         background-color: #DBD65C;
@@ -237,7 +214,13 @@ body {
     .card3 {
         background-color: #B53DA4;
         color: #44023B;
+        height: 513px;
     }
+}
+
+.card__img--modifier {
+    width: 100%;
+    height: 100%;
 }
 
 .card__img {
@@ -245,7 +228,7 @@ body {
 }
 
 .card__title {
-    text-align: center;
+    text-align: $align;
     padding-bottom: 20px;
 }
 
@@ -262,15 +245,13 @@ body {
 
 .info {
     width: 100%;
-    max-width: 1300px;
+    max-width: $max-width;
     margin: 0 auto;
     background-color: #AB12B8;
     position: relative;
     overflow: hidden;
     .ola__container {
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
+        @include flex-box2 (center, flex-end);
         height: 150px;
         gap: 20px;
         padding: 15px 0;
@@ -289,7 +270,7 @@ body {
 }
 
 .info__title {
-    text-align: center;
+    text-align: $align;
     color: $color-white;
     font-size: 35px;
     margin: 0 auto;
@@ -301,21 +282,18 @@ body {
 
 .footer {
     width: 100%;
-    max-width: 1300px;
+    max-width: $max-width;
     margin: 0 auto;
     background-color: #3C3C3C;
     padding: 20px;
     .footer__container {
         width: 85%;
-        height: 100%;
+        // height: 100%;
         margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
+        @include flex-box (space-between);
         .container__text {
-            display: flex;
+            @include flex-box2 (space-between, left);
             flex-direction: column;
-            justify-content: space-between;
-            align-items: left;
             .footer__copy--modifier {
                 color: #959595;
                 font-size: 20px;
@@ -324,8 +302,7 @@ body {
         }
     }
     .container__list {
-        display: flex;
-        justify-content: space-between;
+        @include flex-box (space-between);
         flex-wrap: wrap;
         .list {
             display: flex;
@@ -354,11 +331,11 @@ body {
 .made {
     background-color: rgb(27, 27, 27);
     width: 100%;
-    max-width: 1300px;
+    max-width: $max-width;
     margin: 0 auto;
     padding: 10px 0;
     color: $color-white;
-    text-align: center;
+    text-align: $align;
     .heart {
         display: inline-block;
         width: 14px;
@@ -410,47 +387,23 @@ body {
     }
 }
 
-/* MEDIA QUERIES */
-
-@media screen and (max-width: 850px) {
-    .nav {
-        display: none;
-    }
-
-    .navbar {
-        display: block;
-    }
-
-    .title {
-        font-size: 65px;
-    }
-
-    .info__title {
-        font-size: 30px;
-        margin: 0 auto;
-        width: 90%;
-    }
-}
-
 /* COACHING */
 
 .sections {
     width: 100%;
-    max-width: 1300px;
+    max-width: $max-width;
     margin: 0 auto;
     background-color: $color-white;
 }
 
 .sections__title {
     font-size: 50px;
-    text-align: center;
+    text-align: $align;
     padding: 50px 0;
 }
 
 .coaching__article {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flex-box (space-evenly);
     gap: 50px;
     padding: 40px 0;
 }
@@ -462,9 +415,7 @@ body {
 }
 
 .coaching__article--modifier {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flex-box (space-evenly);
     gap: 50px;
     flex-direction: row-reverse;
 }
@@ -477,8 +428,8 @@ body {
 
 .header__svg--modifier {
     position: absolute;
-    left: -50px;
-    height: 550px;
+    left: -40px;
+    height: 500px;
     z-index: 1;
 }
 
@@ -505,9 +456,7 @@ body {
     max-width: 370px;
     min-width: 300px;
     min-height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-box (center);
     flex-direction: column;
     border-radius: 40px;
     overflow: hidden;
@@ -519,8 +468,6 @@ body {
 .storecard__img {
     margin-bottom: 15px;
 }
-
-
 
 .card__title-store {
     margin-bottom: 100px;
@@ -537,9 +484,7 @@ body {
 .price__btn {
     background-color: #fffffff0;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-box (space-between);
     border-radius: 50px;
     padding: 0 10px;
     padding-bottom: 20px;
@@ -550,10 +495,8 @@ body {
     width: 90%;
     height: 50px;
     border-radius: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+    @include flex-box (space-between);
+    text-align: $align;
 }
 
 .cash {
@@ -568,12 +511,10 @@ body {
     padding-top: 12px;
 }
 
-/* About */
+/* ABOUT ME */
 
 .about__article {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    @include flex-box (space-around);
     padding: 70px 0;
     gap: 50px;
 }
@@ -583,24 +524,25 @@ body {
 }
 
 .about__title {
-    text-align: center;
+    text-align: $align;
     font-size: 40px;
     padding: 30px;
 }
 
-/* ABOUT ME */
-
 .social-networks {
     background-color: inherit;
     height: 150px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flex-box (space-evenly);
 }
 
 .social__link {
-    color: #000;
+    // color: #000;
     font-size: 50px;
+
+    @include social-networks(#{$facebook});
+}
+.social__link:hover {
+    color: #5614b0 !important;
 }
 
 /* CONTACT */
@@ -646,5 +588,36 @@ form {
     border-radius: 45px;
     font-size: 25px;
     font-weight: 700;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 850px) {
+    .nav {
+        display: none;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .info__title {
+        font-size: 30px;
+        margin: 0 auto;
+        width: 90%;
+    }
+    .header__svg {
+        display: none;
+    }
+    .header__svg--modifier {
+        display: none;
+    }
+    .img-article-about {
+        height: 450px;
+    }
 }
 

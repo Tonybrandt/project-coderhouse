@@ -1,0 +1,15 @@
+﻿@mixin flex-box ($justifi){
+    display: flex;
+    justify-content: $justifi;
+    align-items: center;
+}
+
+@mixin flex-box2 ($justifi, $align){
+    display: flex;
+    justify-content: $justifi;
+    align-items: $align;
+}
+
+@mixin social-networks($sn) {
+    color: $sn;
+}
