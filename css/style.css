@@ -89,7 +89,7 @@ body {
 .header__content {
   height: calc(100vh - 70px);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   position: relative;
   flex-direction: column; }
@@ -528,7 +528,11 @@ form {
   .nav {
     display: none; }
   .navbar {
-    display: block; }
+    display: block;
+    font-family: 'Raleway', sans-serif; }
+    .navbar .to-index {
+      text-decoration: none;
+      color: inherit; }
   .nav__btn {
     text-decoration: none;
     color: inherit;
