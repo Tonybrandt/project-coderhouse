@@ -36,6 +36,7 @@ $breakpoint-tablet: 768px;
             @include flex-box (space-between);
             height: 60px;
             color: $color-white;
+            margin-top: 15px;
             .nav__link {
                 text-decoration: none;
                 color: inherit;
@@ -204,7 +205,19 @@ $breakpoint-tablet: 768px;
         padding: 10px;
         margin: 15px 10px;
         gap: 15px;
+        box-shadow: 10px 10px 5px 0px rgba(175,175,175,0.75);
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(175,175,175,0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(175,175,175,0.75);
+        .price {
+            font-size: 30px;
+            text-align: $align;
+            color: $color-white;
+            margin-bottom: 15px;
+        }
     }
+
+    
+
     .card1 {
         background-color: #DBD65C;
         color: #585503;
@@ -294,7 +307,6 @@ $breakpoint-tablet: 768px;
     padding: 20px;
     .footer__container {
         width: 85%;
-        // height: 100%;
         margin: 0 auto;
         @include flex-box (space-between);
         .container__text {
@@ -440,7 +452,9 @@ $breakpoint-tablet: 768px;
 }
 
 .card__copy {
-    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: $color-white;
 }
 
 .membership__btn {
@@ -495,14 +509,6 @@ $breakpoint-tablet: 768px;
     padding: 0 10px;
     padding-bottom: 20px;
     height: 50px;
-}
-.price {
-    background-color: inherit;
-    width: 90%;
-    height: 50px;
-    border-radius: 50px;
-    @include flex-box (space-between);
-    text-align: $align;
 }
 
 .cash {
@@ -656,6 +662,11 @@ form {
     .img-article-about {
         height: 450px;
     }
+    .footer__container {
+        width: 90%;
+        margin: 0 auto;
+        @include flex-box (space-between);
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -665,4 +676,3 @@ form {
         @include flex-box (space-evenly);
     }
 }
-
