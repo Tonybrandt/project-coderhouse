@@ -115,7 +115,7 @@ $breakpoint-tablet: 768px;
 
 .header__content {
     height: calc(100vh - 70px);
-    @include flex-box (space-around);
+    @include flex-box (space-evenly);
     position: relative;
     flex-direction: column;
     .title-container {
@@ -632,16 +632,30 @@ form {
     }
 
     .nav__btn {
-        text-decoration: none;
-        color: inherit;
         font-weight: 500;
         border-top: $border-btn-nav $color-btn-violet;
         border-right: $border-btn-nav $color-btn-violet;
         border-bottom: $border-btn-nav $color-btn-yellow;
         border-left: $border-btn-nav $color-btn-yellow;
         border-radius: 40px;
-        padding: 5px 10px;
+        padding: 2px 6px;
         text-align: $align;
+    }
+
+    .header__btn {
+        z-index: 100;
+        text-decoration: none;
+        color: $dark;
+        font-size: 28px;
+        background-color: rgba(255, 255, 255, 0.427);
+        padding: 20px 60px;
+        border-radius: 40px;
+        text-align: $align;
+        font-weight: 500;
+        border-bottom: $border $color-btn-violet;
+        border-right: $border $color-btn-violet;
+        border-top: $border $color-btn-yellow;
+        border-left: $border $color-btn-yellow;
     }
 
     .title {
