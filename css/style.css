@@ -36,7 +36,8 @@ body {
         color: inherit; }
         .header .container .nav .nav__link .nav__logo {
           font-weight: 800;
-          letter-spacing: 1.5px; }
+          letter-spacing: 1.5px;
+          font-size: 30px; }
           .header .container .nav .nav__link .nav__logo:hover {
             text-decoration: underline; }
       .header .container .nav .nav__links {
@@ -235,7 +236,7 @@ body {
   color: #fdfdfd;
   font-size: 35px;
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
   padding-top: 60px; }
 
 /* Footer */
