@@ -16,15 +16,13 @@ $breakpoint-tablet: 768px;
 //   desktop: 1024px,
 // ) !default;
 
-
 .span {
     display: none;
 }
 
 .header {
     width: 100%;
-    max-width: $max-width;
-    height: calc(100vh - 20px);
+    height: 100vh;
     background: linear-gradient(to right, #5614b0, #dbd65c);
     margin: 0 auto;
     position: relative;
@@ -76,7 +74,12 @@ $breakpoint-tablet: 768px;
                 border-radius: 40px;
                 padding: 5px 10px;
                 text-align: $align;
+                transition: all 0.5s;
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
+
         }
         @media screen and (max-width: 850px) {
             .nav {
@@ -115,7 +118,7 @@ $breakpoint-tablet: 768px;
 /* FIN bootstrap */
 
 .header__content {
-    height: calc(100vh - 70px);
+    height: 100vh;
     @include flex-box (space-evenly);
     position: relative;
     flex-direction: column;
@@ -138,17 +141,20 @@ $breakpoint-tablet: 768px;
         color: $color-white;
         padding-bottom: 50px;
         .copy {
+            width: 60%;
+            margin: 0 auto;
             color: $color-white;
             text-align: $align;
-            margin-top: 25px;
+            font-weight: bold;
+            font-size: 22px;
             z-index: 10;
         }
     }
     .header__svg {
         position: absolute;
-        left: -50px;
+        left: -70px;
         top: 80px;
-        height: 400px;
+        height: 550px;
         z-index: 1;
     }
 
@@ -192,15 +198,12 @@ $breakpoint-tablet: 768px;
     padding: 70px 15px;
     flex-flow: row wrap;
     width: 100%;
-    max-width: $max-width;
     margin: 0 auto;
     .card {
-        max-height: 550px;
-        max-width: 300px;
-        min-width: 280px;
-        min-height: 340px;
-        @include flex-box (center);
-        flex-direction: column;
+        height: 515px;
+        width: 300px;
+        @include flex-box (space-around);
+        // flex-direction: column;
         border-radius: 40px;
         overflow: hidden;
         padding: 10px;
@@ -222,19 +225,16 @@ $breakpoint-tablet: 768px;
     .card1 {
         background-color: #DBD65C;
         color: #585503;
-        height: 513px;
     }
     
     .card2 {
         background-color: #CC9A78;
         color: #755606;
-        height: 513px;
     }
     
     .card3 {
         background-color: #B53DA4;
         color: #44023B;
-        height: 513px;
     }
 }
 
@@ -265,7 +265,6 @@ $breakpoint-tablet: 768px;
 
 .info {
     width: 100%;
-    max-width: $max-width;
     margin: 0 auto;
     background-color: #AB12B8;
     position: relative;
@@ -302,7 +301,6 @@ $breakpoint-tablet: 768px;
 
 .footer {
     width: 100%;
-    max-width: $max-width;
     margin: 0 auto;
     background-color: #3C3C3C;
     padding: 20px;
@@ -326,6 +324,7 @@ $breakpoint-tablet: 768px;
         .list {
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
             margin-left: 40px;
             .list__copy {
                 color: $color-white;
@@ -350,7 +349,6 @@ $breakpoint-tablet: 768px;
 .made {
     background-color: $dark;
     width: 100%;
-    max-width: $max-width;
     margin: 0 auto;
     padding: 10px 0;
     color: $color-white;
@@ -410,7 +408,6 @@ $breakpoint-tablet: 768px;
 
 .sections {
     width: 100%;
-    max-width: $max-width;
     margin: 0 auto;
     background-color: $color-white;
 }
@@ -440,7 +437,9 @@ $breakpoint-tablet: 768px;
 }
 
 .article__copy {
+    font-size: 22px;
     padding: 0 50px;
+    text-align: left;
 }
 
 /* MEMBERSHIP */
