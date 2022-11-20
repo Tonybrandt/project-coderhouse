@@ -281,7 +281,7 @@ $breakpoint-tablet: 768px;
             font-size: 22px;
             z-index: 100;
             .fa-solid {
-                color: #3C3C3C;
+                color: $color-btn-violet;
                 padding-right: 5px;
             }
         }
@@ -454,7 +454,10 @@ $breakpoint-tablet: 768px;
 .card__copy {
     font-size: 20px;
     font-weight: 500;
-    color: $color-white;
+    color: $dark;
+    text-align: left;
+    padding: 0 1rem;
+
 }
 
 .membership__btn {
@@ -468,6 +471,13 @@ $breakpoint-tablet: 768px;
     border-radius: 50px;
 }
 
+.fa-solid {
+    color: #06be03;
+}
+
+.fa-xmark {
+    color: red;
+}
 /* STORE */
 
 .store__card {
@@ -501,6 +511,11 @@ $breakpoint-tablet: 768px;
     color: inherit;
 }
 
+.card-body {
+    @include flex-box (space-between);
+    flex-direction: column;
+}
+
 .price__btn {
     background-color: #fffffff0;
     width: 100%;
@@ -509,6 +524,16 @@ $breakpoint-tablet: 768px;
     padding: 0 10px;
     padding-bottom: 20px;
     height: 50px;
+    align-items: flex-end;
+}
+
+.card-title {
+    text-align: left;
+    font-weight: bold;
+}
+
+.fa-cart-shopping {
+    color: $dark;
 }
 
 .cash {

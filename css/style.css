@@ -269,7 +269,7 @@ body {
   z-index: 100;
 }
 .info .ola__container .check .fa-solid {
-  color: #3C3C3C;
+  color: rgba(85, 20, 176, 0.3529411765);
   padding-right: 5px;
 }
 
@@ -444,7 +444,9 @@ body {
 .card__copy {
   font-size: 20px;
   font-weight: 500;
-  color: #fdfdfd;
+  color: #292929;
+  text-align: left;
+  padding: 0 1rem;
 }
 
 .membership__btn {
@@ -456,6 +458,14 @@ body {
   font-size: 20px;
   font-weight: 800;
   border-radius: 50px;
+}
+
+.fa-solid {
+  color: #06be03;
+}
+
+.fa-xmark {
+  color: red;
 }
 
 /* STORE */
@@ -492,6 +502,13 @@ body {
   color: inherit;
 }
 
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
 .price__btn {
   background-color: rgba(255, 255, 255, 0.9411764706);
   width: 100%;
@@ -502,6 +519,16 @@ body {
   padding: 0 10px;
   padding-bottom: 20px;
   height: 50px;
+  align-items: flex-end;
+}
+
+.card-title {
+  text-align: left;
+  font-weight: bold;
+}
+
+.fa-cart-shopping {
+  color: #292929;
 }
 
 .cash {

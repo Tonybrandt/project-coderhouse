@@ -16,3 +16,5 @@ Dentro de la página "Contact", utilicé un formulario de Bootstrap, el cual tam
 Debajo del footer, agregué una linea más de código con una pequeña animación.
 
 También utilicé 1 Media queries. Gracias a la utilización de flex y unas pocas lineas de código no es necesario utilizar más media queries, ya que también Bootstrap ayuda.
+
+sass --watch scss/style.scss css/style.css
