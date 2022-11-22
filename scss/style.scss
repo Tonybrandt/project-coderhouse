@@ -297,12 +297,17 @@ $breakpoint-tablet: 768px;
     padding-top: 60px;
 }
 
+.ola__container {
+    width: 90%;
+    margin: 0 auto;
+}
+
 /* Footer */
 
 .footer {
     width: 100%;
     margin: 0 auto;
-    background-color: #3C3C3C;
+    background-color: $dark;
     padding: 20px;
     .footer__container {
         width: 85%;

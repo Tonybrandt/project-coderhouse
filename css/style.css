@@ -282,11 +282,16 @@ body {
   padding-top: 60px;
 }
 
+.ola__container {
+  width: 90%;
+  margin: 0 auto;
+}
+
 /* Footer */
 .footer {
   width: 100%;
   margin: 0 auto;
-  background-color: #3C3C3C;
+  background-color: #292929;
   padding: 20px;
 }
 .footer .footer__container {
