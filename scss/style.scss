@@ -187,7 +187,6 @@ $breakpoint-tablet: 768px;
     color: $color-white;
     text-align: $align;
     margin-top: 25px;
-    z-index: 10;
 }
 
 /* Section Cards */
@@ -288,13 +287,21 @@ $breakpoint-tablet: 768px;
     }
 }
 
+.info {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #AB12B8;
+    position: relative;
+    overflow: hidden;
+}
+
 .info__title {
     text-align: $align;
     color: $color-white;
     font-size: 35px;
     margin: 0 auto;
     width: 80%;
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
 .ola__container {
@@ -718,5 +725,8 @@ form {
         color: #000;
         height: 150px;
         @include flex-box (space-evenly);
+    }
+    .sections__title {
+        font-size: 38px;
     }
 }
