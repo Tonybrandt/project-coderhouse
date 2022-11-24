@@ -630,6 +630,20 @@ form {
     font-weight: 700;
 }
 
+// Politicas y Privacidad
+
+.polity {
+    font-weight: bold;
+    font-size: 22px;
+    width: 95%;
+    margin: 15px auto;
+}
+
+.copy-modifier {
+    width: 95%;
+    margin: 0 auto;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 1000px) {
