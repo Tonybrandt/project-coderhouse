@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Raleway", sans-serif;
 }
@@ -195,7 +199,6 @@ body {
   align-items: center;
   border-radius: 40px;
   overflow: hidden;
-  padding: 10px;
   margin: 15px 10px;
   gap: 15px;
   box-shadow: 10px 10px 5px 0px rgba(175, 175, 175, 0.75);
@@ -410,36 +413,41 @@ body {
   margin: 0 auto;
   background-color: #fdfdfd;
 }
-
-.sections__title {
+.sections .sections__title {
   font-size: 50px;
   text-align: center;
   padding: 50px 0;
 }
-
-.coaching__article {
+.sections .coaching__article {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 50px;
   padding: 40px 0;
 }
-
-.img-article {
+.sections .coaching__article .img-article {
   height: 250px;
   border: 1px solid #292929;
   border-radius: 75px;
 }
-
-.coaching__article--modifier {
+.sections .coaching__article .article__copy {
+  font-size: 22px;
+  padding: 0 50px;
+  text-align: left;
+}
+.sections .coaching__article--modifier {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 50px;
   flex-direction: row-reverse;
 }
-
-.article__copy {
+.sections .coaching__article--modifier .img-article {
+  height: 250px;
+  border: 1px solid #292929;
+  border-radius: 75px;
+}
+.sections .coaching__article--modifier .article__copy {
   font-size: 22px;
   padding: 0 50px;
   text-align: left;
@@ -460,6 +468,12 @@ body {
   text-align: left;
   padding: 0 1rem;
 }
+.card__copy .fa-solid {
+  color: #06be03;
+}
+.card__copy .fa-xmark {
+  color: red;
+}
 
 .membership__btn {
   background-color: rgba(240, 240, 240, 0.3960784314);
@@ -472,56 +486,18 @@ body {
   border-radius: 50px;
 }
 
-.fa-solid {
-  color: #06be03;
-}
-
-.fa-xmark {
-  color: red;
-}
-
 /* STORE */
-.store__card {
-  background-color: rgba(217, 217, 217, 0.5843137255);
-  max-height: 550px;
-  max-width: 370px;
-  min-width: 300px;
-  min-height: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 40px;
-  overflow: hidden;
-  padding: 10px;
-  margin: 15px 0;
-  padding-bottom: 35px;
-}
-
-.storecard__img {
-  margin-bottom: 15px;
-}
-
-.card__title-store {
-  margin-bottom: 100px;
-}
-
-.card__title__name--modifier {
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: 700;
-  padding: 30px;
-  color: inherit;
-}
-
 .card-body {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
 }
-
-.price__btn {
+.card-body .card-title {
+  text-align: left;
+  font-weight: bold;
+}
+.card-body .price__btn {
   background-color: rgba(255, 255, 255, 0.9411764706);
   width: 100%;
   display: flex;
@@ -533,43 +509,40 @@ body {
   height: 50px;
   align-items: flex-end;
 }
-
-.card-title {
-  text-align: left;
-  font-weight: bold;
-}
-
-.fa-cart-shopping {
-  color: #292929;
-}
-
-.cash {
+.card-body .price__btn .cash {
   font-weight: 700;
   font-size: 22px;
   padding-top: 12px;
 }
-
-.shopping {
+.card-body .price__btn .shopping {
   font-weight: 700;
   font-size: 22px;
   padding-top: 12px;
   color: #292929;
+}
+.card-body .price__btn .shopping .fa-cart-shopping {
+  color: inherit;
 }
 
 /* ABOUT ME */
-.about__article {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 50px 15px;
-  gap: 20px;
+.container-modifier {
+  width: 100%;
   margin: 0 auto;
 }
 
-.about__title {
-  text-align: center;
-  font-size: 40px;
-  padding: 30px;
+.carousel {
+  margin-bottom: 40px;
+  width: 90%;
+  margin: 0 auto;
+}
+.carousel .d-block {
+  height: 650px;
+  object-fit: cover;
+}
+
+.article__copy-about {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .social-networks {
@@ -577,10 +550,18 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
-
-.social__link {
+.social-networks .social__link {
   color: #292929;
   font-size: 50px;
+}
+.social-networks .social__link .btn--facebook:hover {
+  color: #1877F2;
+}
+.social-networks .social__link .btn--instagram:hover {
+  color: #E4405F;
+}
+.social-networks .social__link .btn--twitter:hover {
+  color: #1DA1F2;
 }
 
 /* CONTACT */
@@ -637,6 +618,7 @@ form {
 .copy-modifier {
   width: 95%;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 /* MEDIA QUERIES */
